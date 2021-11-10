@@ -52,6 +52,7 @@ a:hover {
 
 /*Navbar*/
 .navbar ul {
+    display: flex;
     list-style: none;
 }
 
@@ -120,7 +121,7 @@ a:hover {
     }
 
     .navbar ul {
-        display: none !important;
+        display: none;
     }
 
     .navbar li:hover a::after,
@@ -403,4 +404,40 @@ section {
     text-align: center;
     padding-top: 30px;
     color: #8fb8ff;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 99999;
+    background: #8fb8ff;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    transition: all 0.4s;
+}
+
+.back-to-top i {
+    font-size: 24px;
+    color: #1e1e1f;
+    line-height: 0;
+}
+
+.back-to-top:hover {
+    background: #7091c9;
+}
+
+.back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    [data-aos-delay] {
+        transition-delay: 0 !important;
+    }
 }

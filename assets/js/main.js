@@ -1,5 +1,6 @@
 (function () {
   "use strict";
+
   const select = (el, all = false) => {
     el = el.trim();
     if (all) {
@@ -11,7 +12,7 @@
 
   const on = (type, el, listener, all = false) => {
     if (all) {
-      select(el, all).forEach((e) => e.addEventListener(type, listener));
+      select(el, all).forEach((el) => el.addEventListener(type, listener));
     } else {
       select(el, all).addEventListener(type, listener);
     }
@@ -44,15 +45,18 @@
       }
     });
   };
+
   window.addEventListener("load", navbarlinksActive);
   onscroll(document, navbarlinksActive);
 
   const scrollto = (el) => {
     let header = select("#header");
     let offset = header.offsetHeight;
+
     if (!header.classList.contains("header-scrolled")) {
-      offset -= 10;
+      offset -= 50;
     }
+
     let elementPos = select(el).offsetTop;
     window.scrollTo({
       top: elementPos - offset,
