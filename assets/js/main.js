@@ -90,6 +90,8 @@
     onscroll(document, toggleBacktotop);
   }
 
+  AOS.init();
+
   on(
     "click",
     ".scrollto",
